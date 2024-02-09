@@ -18,7 +18,7 @@ public class player : MonoBehaviour
     private float dashCooldown = 5f;
 
     private float usableDash = 0f;
-    private float force = 100f;
+    private float force = 300f;
 
 
     // Start is called before the first frame update
@@ -34,11 +34,14 @@ public class player : MonoBehaviour
         Vector2 dir = Vector2.zero;
         if(Input.GetKey(KeyCode.D)){
             dir += Vector2.right;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         if(Input.GetKey(KeyCode.A)){
             dir += -Vector2.right;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         if(isGrounded() && Input.GetKey(KeyCode.W)){
+            Debug.Log("Jumping");
             rb2d.AddForce(transform.up * force);
         }
         if(rb2d.velocity.y >= 0){
@@ -49,7 +52,7 @@ public class player : MonoBehaviour
         }
         velocity = dir * Speed;
         // dash when shift in the direction you are headed
-        if(Input.GetKey(KeyCode.LeftShift) && Time.time > usableDash){
+        if(Input.GetKey(KeyCode.LeftShift) && Time.time > usableDash && velocity != Vector3.zero){
             Dash(velocity);
             usableDash = Time.time + dashCooldown;
         }
@@ -64,8 +67,8 @@ public class player : MonoBehaviour
     }
 
     public bool isGrounded(){
-        Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y + SELF_EXTENTS.y, 0);
-        RaycastHit2D hit = Physics2D.Raycast(rayPosition, Vector2.down, .5f, groundlayer);
+        Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y, 0);
+        RaycastHit2D hit = Physics2D.Raycast(rayPosition, Vector2.down, SELF_EXTENTS.y, groundlayer);
         if(hit.collider != null){
             return true;
         }
@@ -82,10 +85,10 @@ public class player : MonoBehaviour
         if(wallHit.collider != null){
             Debug.Log("there is a wall you nincompoop");
             if(velocity.x > 0){
-                transform.position = new Vector3(wallHit.point.x - SELF_EXTENTS.x -.1f, wallHit.point.y, 0f);
+                transform.position = new Vector3(wallHit.point.x - SELF_EXTENTS.x -.05f, wallHit.point.y, 0f);
             }
             else{
-                transform.position = new Vector3(wallHit.point.x + SELF_EXTENTS.x + .1f, wallHit.point.y, 0f);
+                transform.position = new Vector3(wallHit.point.x + SELF_EXTENTS.x + .05f, wallHit.point.y, 0f);
             }
             endPos = transform.position;
             
@@ -96,11 +99,11 @@ public class player : MonoBehaviour
         }
         if(endPos.x > originalPos.x){
             slash = Physics2D.Raycast(originalPos, velocity.normalized, endPos.x - originalPos.x, LayerMask.GetMask("Enemy"));
-            Debug.DrawLine(originalPos, endPos - originalPos, Color.red, 1f);
+            //Debug.DrawLine(originalPos, endPos - originalPos, Color.red, 1f);
         }
         else{
             slash = Physics2D.Raycast(originalPos, velocity.normalized, originalPos.x - endPos.x, LayerMask.GetMask("Enemy"));
-            Debug.DrawLine(originalPos, originalPos - endPos, Color.white, 4f);
+            //Debug.DrawLine(originalPos, originalPos - endPos, Color.white, 4f);
         }
         
         
