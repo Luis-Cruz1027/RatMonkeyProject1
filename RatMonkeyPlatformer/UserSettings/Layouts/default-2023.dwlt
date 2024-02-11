@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/Enemies/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -384,16 +384,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/Enemies/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\aleja\Desktop\RatMonkey-Games\RatMonkeyProject1\RatMonkeyProject1\RatMonkeyPlatformer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bc980000
-    m_LastClickedID: 39100
-    m_ExpandedIDs: 000000002898000000ca9a3b
+    m_SelectedIDs: dc990000
+    m_LastClickedID: 39388
+    m_ExpandedIDs: 000000002698000090980000ce98000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -422,7 +422,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000028980000
+    m_ExpandedIDs: 0000000026980000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -454,15 +454,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000168700002a870000eaa6000038a10000b4c60000769a0000b2980000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: player
-      m_OriginalName: player
+      m_Name: HealthBar
+      m_OriginalName: HealthBar
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 30596
+      m_UserData: 49730
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -568,9 +568,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 9c980000
       m_LastClickedID: 0
-      m_ExpandedIDs: fcfaffff4c970000
+      m_ExpandedIDs: 9a40feffda40fefffe40fefffcfaffff4c9700007c970000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1160,9 +1160,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 10.201791, y: 5.865983, z: -9.900717}
+    m_Target: {x: 10.7554035, y: 5.740509, z: -9.380881}
     speed: 2
-    m_Value: {x: 10.387775, y: 5.8715734, z: -9.901697}
+    m_Value: {x: 10.7554035, y: 5.740509, z: -9.380881}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1212,9 +1212,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.0807288
+    m_Target: 1.3291042
     speed: 2
-    m_Value: 2.1787736
+    m_Value: 1.3291042
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_SerializedViewValues:
   - C:\Users\aleja\Desktop\RatMonkey-Games\RatMonkeyProject1\RatMonkeyPlatformer\Library\PlayModeViewStates\4d3dd8350feff0a4b820b9b3e032a62b
   m_PlayModeViewName: GameView
-  m_ShowGizmos: 0
+  m_ShowGizmos: 1
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
   m_TargetSize: {x: 1116, y: 461}
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_Stats: 0
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
